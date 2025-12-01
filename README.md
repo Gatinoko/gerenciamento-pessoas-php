@@ -1,6 +1,8 @@
 # Gerenciamento Pessoas Php
 Desenvolvido como parte de um desafio técnico fullstack, esse projeto é um sistema web simples de gestão de pessoas focado na funcionalidade CRUD (Create, Read, Update, Delete) feito em PHP.
 
+<img width="600" height="604" alt="image" src="https://github.com/user-attachments/assets/fcba20e1-f3fc-4e90-a841-54df26613111" />
+
 ## Estrutura Geral do Projeto
 - `src`: Diretório onde ficam todos os arquivos e pastas do sistema web.
 - `src/Config/config.php`: Arquivo com as configurações do banco de dados.
