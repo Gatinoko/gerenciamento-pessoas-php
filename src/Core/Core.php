@@ -24,11 +24,11 @@ class Core
 
             if ($hasDynamicSeg) {
                 array_shift($matches);
-
+                $path = isset($matches[0]) ? preg_replace('/{id}/', $matches[0], $route['path']) : $route['path'];
                 $routeFound = true;
 
                 // Chama o controller e função definidos para a rota no arquivo main.php caso o path e o method sejam iguais.
-                if ($route['path'] === $url && $route['method'] === Request::method()) {
+                if ($path === $url && $route['method'] === Request::method()) {
                     [$controller, $action] = explode('@', $route['action']);
                     $controller = $prefixController . $controller;
                     $extendController = new $controller();
@@ -37,7 +37,7 @@ class Core
                 }
 
                 // Responde com um erro se o método HTTP não é permitido pela rota.
-                else if ($route['path'] !== $url && $route['method'] !== Request::method()) {
+                else if ($path !== $url && $route['method'] !== Request::method()) {
                     Response::json([
                         'success' => false,
                         'message' => 'Method not allowed.'
