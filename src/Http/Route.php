@@ -2,10 +2,12 @@
 
 namespace App\Http;
 
-class Route {
+class Route
+{
     private static array $routes = [];
 
-    public static function get(string $path, string $action) {
+    public static function get(string $path, string $action)
+    {
         self::$routes[] = [
             'path' => $path,
             'action' => $action,
@@ -13,7 +15,8 @@ class Route {
         ];
     }
 
-    public static function post(string $path, string $action) {
+    public static function post(string $path, string $action)
+    {
         self::$routes[] = [
             'path' => $path,
             'action' => $action,
@@ -21,7 +24,8 @@ class Route {
         ];
     }
 
-    public static function put(string $path, string $action) {
+    public static function put(string $path, string $action)
+    {
         self::$routes[] = [
             'path' => $path,
             'action' => $action,
@@ -29,7 +33,8 @@ class Route {
         ];
     }
 
-    public static function delete(string $path, string $action) {
+    public static function delete(string $path, string $action)
+    {
         self::$routes[] = [
             'path' => $path,
             'action' => $action,
@@ -37,7 +42,8 @@ class Route {
         ];
     }
 
-    public static function routes() {
+    public static function routes()
+    {
         return self::$routes;
     }
 }
