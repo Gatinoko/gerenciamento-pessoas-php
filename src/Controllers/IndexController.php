@@ -6,6 +6,8 @@ class IndexController
 {
     public function index()
     {
-        echo "Hello, world!";
+        $htmlFilePath = './src/Pages/index.html';
+        $htmlContent = file_get_contents($htmlFilePath);
+        echo $htmlContent;
     }
 }
